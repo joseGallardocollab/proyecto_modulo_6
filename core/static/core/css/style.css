@@ -12,7 +12,7 @@ añadiendo un botón gris y verde simple*/
 }
 
 body{
-    background-image: linear-gradient(140deg, #80b1b5, #505050);
+    background-image: linear-gradient(140deg, #656c6d, #505050);
     font-family: 'inter', sans-serif;
 }
 
@@ -49,7 +49,7 @@ h2{
 }
 
 .navbar {
-    background-color: #212529;
+    background-color: rgba(0 50 65) !important;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
@@ -85,7 +85,7 @@ h2{
   justify-content: center;  
   padding: 20px;   
   color: #ffffff;
-  background-color: #312d2fd3 ;  
+  background-color: #1d2d3dd3 ;  
   max-width: 800px;
   margin: 0 auto;
 }
@@ -96,8 +96,8 @@ h2{
   justify-content: center;  
   padding: 15px 8px 15px 8px;   
   color: #ffffff;
-  background-color: rgb(80, 79, 79) !important;
-  border-radius: 15px;
+  background-color: rgba(0 50 65) !important;
+  border-radius: 10px;
   border: 2px solid;
 }
 
@@ -149,16 +149,17 @@ footer{
   font-size: 12px;
   color: #d3d3d3;           
   text-decoration: none;     
-  border: 1px solid #020202; 
+  border: 1px solid #ff7575; 
   border-radius: 4px;
-  background-color: #2a1d3f70;
+  background-color: #ee2222a8;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .btn-link-gray:hover {
   background-color: #6c757d;
-  color: #fff;               
+  color: #fff;      
+  border: 1px solid #ff7575;          
 }
 
 .btn-link-green {
