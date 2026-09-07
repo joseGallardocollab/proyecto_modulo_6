@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Tareas{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Lista de Tareas</h2>
+<a href="{% url 'tarea_create' proyecto.id %}" class="btn btn-success">Crear nueva tarea</a>
+<table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Estado</th>
+                <th>Prioridad</th>
+                <th>Fecha límite</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
+            </tr>    
+        </thead>
+        <tbody>
+        {% for tarea in tareas %}
+        <tr>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.estado }}</td>
+            <td>{{ tarea.prioridad }}</td>
+            <td>{{ tarea.fecha_limite }}</td>
+            <td>
+                <a href="{% url 'tarea_update' proyecto.id tarea.id %}" class="btn btn-warning btn-sm">
+                    Editar
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'tarea_delete' proyecto.id tarea.id %}" class="btn btn-danger btn-sm">
+                    Eliminar
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4" class="text-center text-muted">No hay tareas registradas.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="col-md-8 offset-md-2 mt-3">
+    <a href="{% url 'proyecto_list' %}" class="btn btn-secondary btn-sm w-100">Volver a lista de proyectos</a>
+</div>
+{% endblock %}

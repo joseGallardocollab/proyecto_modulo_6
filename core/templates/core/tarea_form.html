@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {% if form.instance.pk %}Editar Tarea{% else %}Nueva Tarea{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8 offset-md-2">
+    <h2 class="mb-4">
+        {% if form.instance.pk %}
+            Editar Tarea
+        {% else %}
+            Crear Tarea
+        {% endif %}
+    </h2>
+
+    <form method="post" class="card card-body shadow-sm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">
+            {% if form.instance.pk %}Guardar cambios{% else %}Guardar{% endif %}
+        </button>
+    </form>
+
+    <div class="col-md-8 offset-md-2 mt-3">
+        <a href="{% url 'tarea_list' proyecto_id %}" 
+           class="btn btn-secondary btn-sm w-100">
+            Volver a la lista de tareas
+        </a>
+    </div>
+</div>
+{% endblock %}
+

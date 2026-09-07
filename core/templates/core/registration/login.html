@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    
+    <div class="card shadow-sm">  
+        <div class="card-body">
+           <h2 class="mb-4 text-center">Iniciar sesión</h2> 
+            <form method="post">
+                   
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username">Usuario:</label><br>
+                    <div class="form-text">{{ form.username }}</div>
+                <div>
+                <div class="mb-3"></div>
+                    <label for="password">Contraseña:</label><br>
+                    <div class="form-text">{{ form.password }}</div>
+                </div>    
+            </form>
+            <button type="submit" class="btn btn-primary w-100 mt-3">Entrar</button>
+        </div>    
+    </div>
+</div>
+{% endblock %}

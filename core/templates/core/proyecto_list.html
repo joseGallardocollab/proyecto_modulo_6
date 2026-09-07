@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Proyectos{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Mis Proyectos</h2>
+
+<a href="{% url 'proyecto_create' %}" class="btn btn-success mt-3">Crear nuevo proyecto</a>
+<div class="list-group mt-3">
+    {% for proyecto in proyectos %}
+        <div class="list-group-item d-flex justify-content-between align-items-center 
+            {% cycle 'list-group-item-success' 'list-group-item-primary' 'list-group-item-warning' %}">
+            
+            <div>
+                <strong>{{ proyecto.nombre }}</strong><br>
+                <small>{{ proyecto.descripcion }}</small>
+            </div>
+            
+            <a href="{% url 'tarea_list' proyecto.id %}" class="btn btn-fb btn-sm">
+                Lista de tareas
+            </a>
+        </div>
+    {% empty %}
+        <div class="alert alert-warning">No hay proyectos disponibles.</div>
+    {% endfor %}
+</div>
+<div class="col-md-8 offset-md-2 mt-3">
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary btn-sm w-100">Volver a inicio</a>
+    </div>
+{% endblock %}
+

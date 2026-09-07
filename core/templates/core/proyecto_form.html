@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}Nuevo Proyecto{% endblock %}
+
+{% block content %}
+<div class="col-md-8 offset-md-2">
+    <h2 class="mb-4 text-center">Crear/Editar Proyecto</h2>
+    <form method="post" class="card card-body shadow-sm">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.nombre.id_for_label }}" class="form-label">Nombre del proyecto</label><br>
+            {{ form.nombre }}
+            {% if form.nombre.help_text %}
+                <div class="form-text text-color-gris">{{ form.nombre.help_text }}</div>
+            {% endif %}
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.descripcion.id_for_label }}" class="form-label">Descripción</label><br>
+            {{ form.descripcion }}
+            {% if form.descripcion.help_text %}
+                <div class="form-text text-color-gris">{{ form.descripcion.help_text }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+
+     <div class="col-md-8 offset-md-2 mt-3">
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary btn-sm w-100">Volver a inicio</a>
+    </div>
+</div>
+
+{% endblock %}

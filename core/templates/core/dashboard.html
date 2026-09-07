@@ -1,0 +1,119 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+    <div class="row g-0">
+        <!-- Contenido de navegación -->
+        <main class="col-md-9 col-lg-10">
+
+            <div class="px-3 px-md-4 text-white">
+
+                <!-- Encabezado y panel de control -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div>
+                        <h2 class="fw-bold mb-1"><div class="fw-semibold">👤</div>
+                            Bienvenido, {{ user.username }} 
+                        </h2>
+
+                        <p class="mb-0">
+                            Panel de control.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- TARJETAS -->
+                <div class="row g-4 mb-4 text-center">
+
+                    <!-- Proyectos -->
+                    <div class="col-sm-8 col-xl-8">
+
+                        <div class="card shadow-sm border-0 h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <div>
+                                        <p class="text-white mb-5">
+                                            Añadir proyectos
+                                        </p>
+
+                                        <h2 class="fw-bold mb-0">
+                                            <a href="{% url 'proyecto_create' %}" class="btn btn-primary">Formulario de proyecto</a>
+                                        </h2>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Perfil -->
+                    <div class="col-sm-4 col-xl-4">
+
+                        <div class="card shadow-sm border-0 h-100">
+
+                            <div class="card-body">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <div>
+                                        <p class="text-white mb-5">
+                                            Estado activo
+                                        </p>
+
+                                        <h5 class="fw-bold mb-0 text-success">
+                                            <div class="fs-2">
+                                                ✅
+                                            </div>
+                                        </h5>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Vistas de proyectos y tareas -->
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+
+                        <!-- Bloque proyectos -->
+                        <div class="row align-items-center mb-1">
+                            <div class="col-md-4">
+                                <h4 class="fw-bold mb-1 text-success">Mis proyectos</h4>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="text-white mb-0">Lista de proyectos.</p>
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <a href="{% url 'proyecto_list' %}" class="btn btn-outline-light">
+                                    Ver mis proyectos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+{% endblock %}
+
+
