@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearTimeout(tiempoInactividad);
         textoEstado.textContent = "Estado activo";
         iconoEstado.className = "bi bi-check-circle-fill text-success";
-        tiempoInactividad = setTimeout(marcarInactivo, 20000); // 30 seg
+        tiempoInactividad = setTimeout(marcarInactivo, 15000); // 30 seg
     }
 
     // Detectar actividad
