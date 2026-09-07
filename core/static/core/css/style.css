@@ -44,6 +44,10 @@ main{
   color: black !important;
 }
 
+h2{
+  color: white;
+}
+
 .navbar {
     background-color: #212529;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);

@@ -14,11 +14,18 @@
                 <!-- Encabezado y panel de control -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
 
-                    <div>
-                        <h2 class="fw-bold mb-1"><div class="fw-semibold">👤</div>
-                            Bienvenido, {{ user.username }} 
+                    <div>         
+                        <h2>
+                            <svg id="icono-perfil" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path fill-rule="evenodd" d="M14 14s-1-1.5-6-1.5S2 14 2 14s1-4 6-4 6 4 6 4z"/>
+                            </svg>
+                        </h2>            
+                        <h2 class="fw-bold mb-1 d-flex align-items-center">
+                            Bienvenido {{ user.username }}, 
+                            <span id="saludo" class="ms-2"></span>
                         </h2>
-
+                                            
                         <p class="mb-0">
                             Panel de control.
                         </p>
@@ -106,6 +113,7 @@
                         </div>
 
                         <!-- tareas -->
+
                     </div>
                 </div>
 
